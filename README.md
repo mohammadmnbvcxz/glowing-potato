@@ -3,23 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ساعت دیجیتال با آلارم</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>اتصال بلوتوث و پخش موزیک</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- اضافه کردن FontAwesome برای آیکون‌ها -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="clock-container">
-        <div id="clock">
-            <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+
+    <div class="container">
+        <h1>اتصال بلوتوث و پخش موزیک</h1>
+        
+        <!-- دکمه اتصال به بلوتوث -->
+        <button id="connectBtn" class="btn-connect">اتصال به دستگاه بلوتوث</button>
+        <div id="status" class="status-text">منتظر اتصال...</div>
+
+        <!-- دکمه انتخاب موزیک -->
+        <button id="selectMusicBtn" class="btn-select-music">انتخاب موزیک</button>
+
+        <!-- ورودی فایل برای انتخاب موزیک -->
+        <input type="file" id="musicFileInput" accept="audio/*" style="display: none;">
+
+        <!-- پخش‌کننده صوتی -->
+        <audio id="audioPlayer" controls>
+            <source id="audioSource" src="" type="audio/mp3">
+            مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+        </audio>
+
+        <!-- افکت‌های صوتی -->
+        <div class="audio-controls">
+            <label for="effectSelect">افکت صوتی</label>
+            <select id="effectSelect">
+                <option value="normal">حالت عادی</option>
+                <option value="babyVoice">صدای بچه‌گانه</option>
+                <option value="deepVoice">صدای کلفت</option>
+                <option value="stereo">استریو</option>
+            </select>
         </div>
-        <div id="am-pm"></div>
-        <div id="alarm-container">
-            <input type="time" id="alarm-time" class="time-picker" />
-            <button id="set-alarm" class="button-primary">تنظیم آلارم</button>
-            <button id="stop-alarm" class="button-danger">توقف آلارم</button>
-            <button id="extend-alarm" class="button-primary">تمدید آلارم (۵ دقیقه)</button>
-            <div id="alarm-status"></div>
+
+        <!-- کنترل‌های عقب و جلو کردن صدا -->
+        <div class="audio-control-box">
+            <button class="control-btn" id="prevBtn">
+                <i class="fas fa-backward"></i> <!-- آیکون عقب -->
+            </button>
+            <button class="control-btn" id="playPauseBtn">
+                <i class="fas fa-play"></i> <!-- آیکون پلی -->
+            </button>
+            <button class="control-btn" id="nextBtn">
+                <i class="fas fa-forward"></i> <!-- آیکون جلو -->
+            </button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
