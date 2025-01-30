@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ساعت بلوتوثی</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصال بلوتوث و پخش موزیک</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- اضافه کردن FontAwesome برای آیکون‌ها -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>اتصال بلوتوث و پخش موزیک</h1>
+        
+        <!-- دکمه اتصال به بلوتوث -->
+        <button id="connectBtn" class="btn-connect">اتصال به دستگاه بلوتوث</button>
+        <div id="status" class="status-text">منتظر اتصال...</div>
+
+        <!-- دکمه انتخاب موزیک -->
+        <button id="selectMusicBtn" class="btn-select-music">انتخاب موزیک</button>
+
+        <!-- ورودی فایل برای انتخاب موزیک -->
+        <input type="file" id="musicFileInput" accept="audio/*" style="display: none;">
+
+        <!-- پخش‌کننده صوتی -->
+        <audio id="audioPlayer" controls>
+            <source id="audioSource" src="" type="audio/mp3">
+            مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+        </audio>
+
+        <!-- افکت‌های صوتی -->
+        <div class="audio-controls">
+            <label for="effectSelect">افکت صوتی</label>
+            <select id="effectSelect">
+                <option value="normal">حالت عادی</option>
+                <option value="babyVoice">صدای بچه‌گانه</option>
+                <option value="deepVoice">صدای کلفت</option>
+                <option value="stereo">استریو</option>
+            </select>
+        </div>
+
+        <!-- کنترل‌های عقب و جلو کردن صدا -->
+        <div class="audio-control-box">
+            <button class="control-btn" id="prevBtn">
+                <i class="fas fa-backward"></i> <!-- آیکون عقب -->
+            </button>
+            <button class="control-btn" id="playPauseBtn">
+                <i class="fas fa-play"></i> <!-- آیکون پلی -->
+            </button>
+            <button class="control-btn" id="nextBtn">
+                <i class="fas fa-forward"></i> <!-- آیکون جلو -->
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
